@@ -31,6 +31,14 @@ A SimHub plugin that lets endurance racing team members share live dashboards wi
 - **Auto-Configuration** — Installs Go, Caddy (HTTPS), API server, and WebSocket relay automatically
 - **DNS Records Helper** — Shows the required DNS records with resolved IPs
 
+### Race Engineer (Spectator Mode)
+- **Spectator Page** — Web-based Race Engineer page at `/engineer` on the API server
+- **Team Selector** — Browse active teams and connect with a password
+- **Dashboard Grid** — View dashboards in 1, 1x2, or 2x2 grid layouts
+- **Fullscreen Mode** — Toggle fullscreen with a single button
+- **Not Listed as Member** — Spectators observe without appearing in the team member list
+- **Shareable Link** — Copy or open the Race Engineer URL directly from the plugin UI
+
 ### Dashboard Sharing
 - **Dual Slot System** — Share up to two dashboards simultaneously
 - **Dashboard Selection** — Choose which SimHub dashboards to share when you are driving
@@ -59,6 +67,7 @@ A SimHub plugin that lets endurance racing team members share live dashboards wi
 - Custom server selector with saved servers
 - One-click connect to your team
 - Browse and join other active teams
+- Race Engineer link with Copy and Open buttons when connected
 
 ### Session
 - Team members list with latency indicators
