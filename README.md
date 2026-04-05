@@ -16,6 +16,34 @@ A SimHub plugin that lets endurance racing team members share live dashboards wi
 - **One-Click Connect** — Save your team name and password, connect with a single button
 - **Active Teams List** — Browse and join other active teams on the server
 - **Auto-Reconnect** — Automatically reconnects if the connection drops
+- **Token-Based Identity** — Each pilot gets a unique token to prevent name conflicts on reconnect
+
+### Dashboard Sharing
+- **Dual Slot System** — Share up to two dashboards simultaneously
+- **Dashboard Selection** — Choose which SimHub dashboards to share when you are driving
+- **Automatic URL Sharing** — Tunnel URLs are shared with teammates via the API
+- **Sharing Toggle** — Start or stop sharing telemetry without leaving the session
+- **Sharing Button Bindings** — Map physical buttons or keys to Start/Stop sharing in Settings
+- **Viewer Count** — See how many teammates and spectators are watching your telemetry
+- **Slot Swap** — Swap remote dashboard slot mapping when viewing a teammate with two shared dashboards
+
+### Display Options
+- **Default Browser** — Opens the dashboard in your default browser
+- **Monitor Overlay** — Fullscreen WebView2 overlay on a selected monitor with dashboard controls
+- **Monitor Button Bindings** — Map physical buttons to Next/Previous screen and actions A-D for the monitor overlay
+- **VoCore** — Injects the remote dashboard as an overlay on a VoCore screen with physical button forwarding
+- **Dual Display** — Configure two display outputs simultaneously (any combination of browser, monitor, VoCore)
+
+### Race Engineer (Spectator Mode)
+- **Spectator Page** — Web-based Race Engineer page at `/engineer` on the API server
+- **Team Selector** — Browse active teams and connect with a password
+- **Dashboard Grid** — View dashboards in 1, 1x2, or 2x2 grid layouts
+- **Per-Cell Controls** — Each dashboard cell has Previous/Next screen and action buttons (A-D)
+- **Viewer Count** — Shows how many people are watching each pilot's telemetry
+- **Not Sharing Indicator** — Pilots who stopped sharing are clearly marked
+- **Fullscreen Mode** — Toggle fullscreen with a single button
+- **Not Listed as Member** — Spectators observe without appearing in the team member list
+- **Shareable Link** — Copy or open the Race Engineer URL directly from the plugin UI
 
 ### Custom Server Support
 - **Saved Servers** — Add multiple custom API servers with a dropdown selector
@@ -28,40 +56,20 @@ A SimHub plugin that lets endurance racing team members share live dashboards wi
 - **SSH Key Management** — Generate and manage SSH keys directly from the plugin
 - **Server Status** — Real-time health check showing API and Relay status
 - **Delete Server** — Uninstall all services from the VPS with one click
-- **Auto-Configuration** — Installs Go, Caddy (HTTPS), API server, and WebSocket relay automatically
+- **Auto-Configuration** — Installs Go, API server, and WebSocket relay automatically
+- **HTTPS Certificate** — Automatic wildcard TLS certificate via DNS-01 challenge (acme-dns)
 - **DNS Records Helper** — Shows the required DNS records with resolved IPs
-
-### Race Engineer (Spectator Mode)
-- **Spectator Page** — Web-based Race Engineer page at `/engineer` on the API server
-- **Team Selector** — Browse active teams and connect with a password
-- **Dashboard Grid** — View dashboards in 1, 1x2, or 2x2 grid layouts
-- **Fullscreen Mode** — Toggle fullscreen with a single button
-- **Not Listed as Member** — Spectators observe without appearing in the team member list
-- **Shareable Link** — Copy or open the Race Engineer URL directly from the plugin UI
-
-### Dashboard Sharing
-- **Dual Slot System** — Share up to two dashboards simultaneously
-- **Dashboard Selection** — Choose which SimHub dashboards to share when you are driving
-- **Automatic URL Sharing** — Tunnel URLs are shared with teammates via the API
-- **Sharing Toggle** — Start or stop sharing telemetry without leaving the session
-- **Button Bindings** — Map physical buttons or keys to control sharing from Settings
-- **Viewer Count** — See how many people are watching your telemetry
-
-### Display Options
-- **Default Browser** — Opens the dashboard in your default browser
-- **Monitor** — Opens fullscreen on a selected monitor
-- **VoCore** — Injects the remote dashboard as an overlay on a VoCore screen
-- **Dual Display** — Configure two display outputs simultaneously
 
 ### Tunneling
 - **Pure WebSocket Tunnel** — No external dependencies (no cloudflared/frpc needed)
+- **HTTPS Support** — Tunnel connections use TLS when available
 - **Wildcard Subdomains** — Each player gets a unique subdomain
 
-### UI
-- **Three Tabs** — Connection, Session, and Settings
+### Other
+- **Auto-Update Check** — Notifies when a new version is available on GitHub
 - **Dark Theme** — Matches SimHub's native look and feel
-- **2K/4K Support** — Larger font sizes for high-DPI displays
 - **Password Masking** — All password fields use masked input with Show/Hide toggle
+- **Debug Logging** — Toggle debug log output to file
 
 ## Plugin Tabs
 
@@ -73,26 +81,36 @@ A SimHub plugin that lets endurance racing team members share live dashboards wi
 - Race Engineer link with Copy and Open buttons when connected
 
 ### Session
-- Team members list with latency indicators
-- Active driver display and selection
-- Play/Stop controls for viewing remote dashboards
-- Sharing toggle with viewer count
+- Team members list with latency and viewer count
+- Watch/Stop controls for viewing remote dashboards
+- Sharing toggle (Start/Stop sharing telemetry)
 - Slot swap for teammates with two dashboards
 
-### Settings
-- Pilot name and team configuration
-- Shared dashboard selection (dual slots)
-- Display device selection (monitors + VoCore)
+### Settings — General
+- Pilot name and team credentials
 - Web server port configuration
-- Tunnel status
-- VPS server creation and management
-- Debug logging
+- Tunnel status and URL
+- Sharing button bindings (Start/Stop)
+- Debug logging toggle
+
+### Settings — Display
+- Shared dashboard selection (dual slots with filtering)
+- Display device selection (Browser, Monitor, VoCore)
+- Monitor overlay with screen picker and button bindings (Next/Previous screen, Actions A-D)
+
+### Settings — Server
+- VPS connection settings (SSH host, port, user, password)
+- SSH key generation and management
+- API password configuration
+- Domain and DNS records
+- One-click provisioning and server deletion
+- HTTPS certificate management
 
 ## Changelog
 
 ### v1.1.0
 
-- **Sharing Toggle** — Start/stop sharing telemetry without leaving the session (kill switch for when you don't want to share)
+- **Sharing Toggle** — Start/stop sharing telemetry without leaving the session
 - **Sharing Button Bindings** — Map physical buttons or keys to Start/Stop sharing in Settings > General
 - **Viewer Count** — See how many teammates and spectators are watching your telemetry in the Session tab
 - **Race Engineer Viewer Count** — The Race Engineer page now shows viewer count per pilot
