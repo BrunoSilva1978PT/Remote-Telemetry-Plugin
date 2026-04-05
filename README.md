@@ -43,6 +43,9 @@ A SimHub plugin that lets endurance racing team members share live dashboards wi
 - **Dual Slot System** — Share up to two dashboards simultaneously
 - **Dashboard Selection** — Choose which SimHub dashboards to share when you are driving
 - **Automatic URL Sharing** — Tunnel URLs are shared with teammates via the API
+- **Sharing Toggle** — Start or stop sharing telemetry without leaving the session
+- **Button Bindings** — Map physical buttons or keys to control sharing from Settings
+- **Viewer Count** — See how many people are watching your telemetry
 
 ### Display Options
 - **Default Browser** — Opens the dashboard in your default browser
@@ -73,6 +76,8 @@ A SimHub plugin that lets endurance racing team members share live dashboards wi
 - Team members list with latency indicators
 - Active driver display and selection
 - Play/Stop controls for viewing remote dashboards
+- Sharing toggle with viewer count
+- Slot swap for teammates with two dashboards
 
 ### Settings
 - Pilot name and team configuration
@@ -82,6 +87,23 @@ A SimHub plugin that lets endurance racing team members share live dashboards wi
 - Tunnel status
 - VPS server creation and management
 - Debug logging
+
+## Changelog
+
+### v1.1.0
+
+- **Sharing Toggle** — Start/stop sharing telemetry without leaving the session (kill switch for when you don't want to share)
+- **Sharing Button Bindings** — Map physical buttons or keys to Start/Stop sharing in Settings > General
+- **Viewer Count** — See how many teammates and spectators are watching your telemetry in the Session tab
+- **Race Engineer Viewer Count** — The Race Engineer page now shows viewer count per pilot
+- **Race Engineer "Not Sharing" Indicator** — Pilots who stopped sharing are clearly marked on the Race Engineer page
+- **Race Engineer Spectator Tracking** — Spectator views from the Race Engineer page are now counted in the viewer total
+- **Monitor Overlay Button Blocking** — When a monitor is configured as a SimHub device, plugin button bindings are correctly bypassed in favor of device hooks
+- **Slot Swap UI** — Swap remote dashboard slot mapping when viewing a teammate with two shared dashboards
+
+### v1.0.0
+
+- Initial release
 
 ## Requirements
 
