@@ -29,15 +29,29 @@ A SimHub plugin that lets racing team members share live dashboards with each ot
 - **Viewer Count** — See how many people are watching your telemetry
 
 ### Watching Teammates
-- **Watch Mode** — Click Watch next to a teammate to receive their live telemetry
+- **Play / Stop Controls** — Green ▶ Play and pink ■ Stop on each pilot card
 - **Telemetry Injection** — Raw game data is injected into your SimHub via ReplayMode
 - **Full DDU/LED Support** — Shift lights, flags, ABS/TC indicators all react to the remote car
 - **Unavailable While Watching** — Players watching someone are hidden from others to prevent re-injected data chains
+- **Auto-Stop on Sharing End** — Injection stops automatically when the watched pilot stops sharing
 - **Auto-Resume** — Watching resumes automatically after a reconnect
+
+### Events (Multi-Team Rooms)
+- **Temporary Team Groupings** — Owners create an event and share a single token so other teams can join for a race or practice
+- **One Token for Everyone** — The same event token works for every team that joins
+- **Auto-Expiry** — Pick No expiry, 1h, 4h, 24h, or 1 week at creation; the event deletes itself automatically
+- **Multiple Events per Team** — A team can participate in several events at the same time
+- **Room Switcher** — Each driver and engineer picks their own room (Main Room or any active event) from a dropdown
+- **Presence-Based Visibility** — Peers only see you when you share a room with them; if a teammate stays in Main, they stay invisible to the event
+- **Cross-Team Play** — In an event room, clicking ▶ Play on a pilot from another team injects their telemetry into your SimHub (LEDs/DDU react to their car)
+- **Cross-Team Dashboards** — The engineer page opens dashboards from any peer team sharing the event
+- **Owner-Only Admin** — Only the team owner can create, join, delete, or leave an event
 
 ### Race Engineer (Spectator Mode)
 - **Browser-Based** — Web page at `/engineer` on the API server, no SimHub needed
 - **Dashboard Grid** — View dashboards in 1, 2x1, 1x2, or 2x2 layouts
+- **Pilots Grouped by Team** — Sidebar groups pilots under their team header (own team in cyan, event peers in orange)
+- **Room Dropdown** — Switch between Main and any active event room
 - **Multi-Monitor** — Launch separate windows on different monitors
 - **Session Restore** — Automatically restore monitor windows from the last session
 - **Auto-Connect** — Shareable URL with team and token for instant connection
@@ -47,6 +61,7 @@ A SimHub plugin that lets racing team members share live dashboards with each ot
 ### Team Admin (Owner Only)
 - **Generate Invites** — Single-use, 48-hour expiry, revocable
 - **Add Engineers** — Create spectator accounts with dedicated tokens
+- **Create / Join Events** — Manage event membership for the team
 - **Members Management** — View tokens, transfer ownership, kick members
 - **Delete Team** — Permanently erase the team and disconnect everyone
 
