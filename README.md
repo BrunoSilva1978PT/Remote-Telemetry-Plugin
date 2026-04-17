@@ -32,6 +32,9 @@ A SimHub plugin that lets racing team members share live dashboards with each ot
 - **Play / Stop Controls** — Green ▶ Play and pink ■ Stop on each pilot card
 - **Telemetry Injection** — Raw game data is injected into your SimHub via ReplayMode
 - **Full DDU/LED Support** — Shift lights, flags, ABS/TC indicators all react to the remote car
+- **Cross-Sim Watching** — Watch a teammate on a different game; the plugin silently switches your SimHub to the peer's game to process their data correctly, then returns to your original game on Stop
+- **Session Survives Game Changes** — Your team connection stays alive whenever you or the plugin switch games — no reconnect, no dropped tunnel
+- **Live Button Feedback** — The Play button shows "⋯ Loading" and the Stop button shows "⋯ Stopping" during a cross-sim switch, so you always know what's happening
 - **Unavailable While Watching** — Players watching someone are hidden from others to prevent re-injected data chains
 - **Auto-Stop on Sharing End** — Injection stops automatically when the watched pilot stops sharing
 - **Auto-Resume** — Watching resumes automatically after a reconnect
